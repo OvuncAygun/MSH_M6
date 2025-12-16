@@ -1,10 +1,10 @@
 #include "AlarmAction.h"
 #include <iostream>
-#include <unistd.h>
+#include <windows.h>
 
 void AlarmAction::handle(SecurityManager* mgr) {
     std::cout << "[ALARM] Activated" << std::endl;
     mgr->setIsAlarmActive(true);
-    sleep(2);
+    Sleep(2);
     handleNext(mgr);
 }
