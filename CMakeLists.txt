@@ -30,8 +30,7 @@ target_sources(MSH_M6
     PUBLIC
         # List the public headers others need to see
         ${CMAKE_CURRENT_SOURCE_DIR}/include/MSH_M6.h
-        ${CMAKE_CURRENT_SOURCE_DIR}/external/ISecurityManager.h
-        ${CMAKE_CURRENT_SOURCE_DIR}/external/ILogger.h
+        ${CMAKE_CURRENT_SOURCE_DIR}/include/ISecurityManager.h
 )
 
 include(CTest)

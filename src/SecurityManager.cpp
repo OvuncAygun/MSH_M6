@@ -5,8 +5,8 @@ SecurityManager::SecurityManager()
     : systemArmed(false),
       alarmActive(false),
       stopFlag(false),
-      motionChain(NULL),
-      smokeChain(NULL) {}
+      motionChain(0),
+      smokeChain(0) {}
 
 bool SecurityManager::getIsSystemArmed() {
     return systemArmed;

@@ -1,6 +1,6 @@
 #include "EmergencyHandler.h"
 #include "SecurityManager.h"
-#include "external/ILogger.h"
+#include "ILogger.h"
 
 EmergencyHandler::EmergencyHandler()
     : nextHandler(NULL), logger(NULL) {}
