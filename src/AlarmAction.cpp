@@ -9,7 +9,7 @@ void AlarmAction::handle(SecurityManager* mgr) {
 
         mgr->setIsAlarmActive(true);
 
-        std::this_thread::sleep_for(std::chrono::seconds(2));
+        Sleep(2000);
 
         handleNext(mgr);
     }
