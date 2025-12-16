@@ -1,6 +1,6 @@
 #include "LightBlinkAction.h"
 #include <iostream>
-#include <windows.h>
+#include "sleep.h"
 
 void LightBlinkAction::handle(SecurityManager* mgr) {
     for (int i = 0; i < 3; ++i) {
