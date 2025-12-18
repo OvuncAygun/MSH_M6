@@ -4,21 +4,26 @@ project(MSH_M6 LANGUAGES CXX)
 set(CMAKE_CXX_STANDARD 98)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
-# Creates the library for Module 6 
 add_library(MSH_M6)
+
+add_library(EXTERNAL INTERFACE)
+
+target_include_directories(EXTERNAL
+    INTERFACE
+        ${CMAKE_CURRENT_SOURCE_DIR}/external
+)
 
 target_include_directories(MSH_M6
     PUBLIC
         ${CMAKE_CURRENT_SOURCE_DIR}/include
+        EXTERNAL
         
     PRIVATE
-        ${CMAKE_CURRENT_SOURCE_DIR}/external
         src
 )
 
 target_sources(MSH_M6
     PRIVATE
-        # List all your implementation files here 
         src/MSH_M6.cpp
         src/SecurityManager.cpp
         src/EmergencyHandler.cpp
@@ -30,7 +35,6 @@ target_sources(MSH_M6
         src/ISecurityManager.cpp
     
     PUBLIC
-        # List the public headers others need to see
         ${CMAKE_CURRENT_SOURCE_DIR}/include/MSH_M6.h
         ${CMAKE_CURRENT_SOURCE_DIR}/include/ISecurityManager.h
 )
