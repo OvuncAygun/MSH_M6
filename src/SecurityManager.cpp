@@ -8,6 +8,8 @@ SecurityManager::SecurityManager()
       motionChain(0),
       smokeChain(0) {}
 
+SecurityManager::~SecurityManager() {};
+
 bool SecurityManager::getIsSystemArmed() {
     return systemArmed;
 }

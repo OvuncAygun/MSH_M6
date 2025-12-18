@@ -15,7 +15,7 @@ private:
 
 public:
     SecurityManager();
-    virtual ~SecurityManager();
+    ~SecurityManager();
 
     bool getIsSystemArmed();
     void setIsSystemArmed(bool isSystemArmed);
