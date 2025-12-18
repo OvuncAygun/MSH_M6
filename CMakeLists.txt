@@ -27,6 +27,7 @@ target_sources(MSH_M6
         src/PoliceCallAction.cpp
         src/FireStationAction.cpp
         src/SecurityChainBuilder.cpp
+        src/ISecurityManager.cpp
     
     PUBLIC
         # List the public headers others need to see
