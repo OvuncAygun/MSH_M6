@@ -10,7 +10,7 @@ public:
     virtual bool getIsAlarmActive() = 0;
     virtual void setIsAlarmActive(bool isAlarmActive) = 0;
 
-    virtual void onMotionDetected() = 0;
-    virtual void onSmokeDetected() = 0;
+    virtual void onMotionDetected(int alarmDuration) = 0;
+    virtual void onSmokeDetected(int alarmDuration) = 0;
     virtual void stopSequence() = 0;
 };
