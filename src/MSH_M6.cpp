@@ -25,14 +25,14 @@ ISecurityManager* MSH_M6::getSecurityManager() {
     return 0;
 }
 
-void MSH_M6::simulateSmokeDetection() {
+void MSH_M6::simulateSmokeDetection(int alarmDuration) {
     if (securityManager) {
-        securityManager->onSmokeDetected();
+        securityManager->onSmokeDetected(alarmDuration);
     }
 }
 
-void MSH_M6::simulateMotionDetection() {
+void MSH_M6::simulateMotionDetection(int alarmDuration) {
     if (securityManager) {
-        securityManager->onMotionDetected();
+        securityManager->onMotionDetected(alarmDuration);
     }
 }
