@@ -15,9 +15,6 @@ public:
 
     ISecurityManager* getSecurityManager();
 
-    void simulateSmokeDetection();
-    void simulateMotionDetection();
-
 private:
     ISecurityManager* securityManager;
     ILogger* logger;
