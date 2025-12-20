@@ -1,6 +1,8 @@
 #pragma once
 
 #include "ISecurityManager.h"
+#include "IDeviceManager.h"
+#include "ILogger.h"
 
 class IEmergencyHandler;
 
@@ -9,13 +11,23 @@ private:
     bool systemArmed;
     bool alarmActive;
     bool stopFlag;
+    int alarmDuration;
 
     IEmergencyHandler* motionChain;
     IEmergencyHandler* smokeChain;
 
+    IDeviceManager* deviceManager;
+    ILogger* logger;
+
 public:
     SecurityManager();
     ~SecurityManager();
+
+    IDeviceManager* getDeviceManager();
+    void setDeviceManager(IDeviceManager* deviceManager);
+
+    ILogger* getLogger();
+    void setLogger(ILogger* logger);
 
     bool getIsSystemArmed();
     void setIsSystemArmed(bool isSystemArmed);
@@ -23,8 +35,9 @@ public:
     bool getIsAlarmActive();
     void setIsAlarmActive(bool isAlarmActive);
 
-    void onMotionDetected();
-    void onSmokeDetected();
+    void onMotionDetected(int alarmDuration);
+    void onSmokeDetected(int alarmDuration);
+    void checkAlarmDuration(int duration);
     void stopSequence();
 
     bool isSequenceStopped() const;

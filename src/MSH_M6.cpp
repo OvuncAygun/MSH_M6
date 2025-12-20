@@ -5,16 +5,34 @@
 MSH_M6::MSH_M6() = default;
 MSH_M6::~MSH_M6() = default;
 
+void MSH_M6::setDeviceManager(IDeviceManager* deviceManager) {
+    this->deviceManager = deviceManager;
+}
+
 void MSH_M6::setLogger(ILogger* logger) {
     this->logger = logger;
 }
 
 void MSH_M6::initializeSecurityManager() {
     securityManager = new SecurityManager();
+    securityManager->setDeviceManager(deviceManager);
+    securityManager->setLogger(logger);
     SecurityChainBuilder builder;
     builder.build(*static_cast<SecurityManager*>(securityManager));
 }
 
 ISecurityManager* MSH_M6::getSecurityManager() {
     return 0;
+}
+
+void MSH_M6::simulateSmokeDetection() {
+    if (securityManager) {
+        securityManager->onSmokeDetected();
+    }
+}
+
+void MSH_M6::simulateMotionDetection() {
+    if (securityManager) {
+        securityManager->onMotionDetected();
+    }
 }
