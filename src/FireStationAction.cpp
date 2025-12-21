@@ -3,5 +3,4 @@
 
 void FireStationAction::handle(SecurityManager* mgr) {
     std::cout << "Calling fire station..." << std::endl;
-    printf("Calling fire station...");
 }
