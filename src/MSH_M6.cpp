@@ -22,5 +22,5 @@ void MSH_M6::initializeSecurityManager() {
 }
 
 ISecurityManager* MSH_M6::getSecurityManager() {
-    return 0;
+    return securityManager;
 }
