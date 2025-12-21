@@ -17,5 +17,6 @@ public:
 
 private:
     ISecurityManager* securityManager;
+    IDeviceManager* deviceManager;
     ILogger* logger;
 };
