@@ -15,8 +15,8 @@ void MSH_M6::setLogger(ILogger* logger) {
 
 void MSH_M6::initializeSecurityManager() {
     securityManager = new SecurityManager();
-    securityManager->setDeviceManager(deviceManager);
-    securityManager->setLogger(logger);
+    static_cast<SecurityManager*>(securityManager)->setDeviceManager(deviceManager);
+    static_cast<SecurityManager*>(securityManager)->setLogger(logger);
     SecurityChainBuilder builder;
     builder.build(*static_cast<SecurityManager*>(securityManager));
 }
