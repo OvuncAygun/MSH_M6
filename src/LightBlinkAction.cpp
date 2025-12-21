@@ -15,14 +15,18 @@ void LightBlinkAction::handle(SecurityManager* mgr) {
 
         IDeviceManager* deviceMgr = mgr->getDeviceManager();
         std::vector<IDevice*> lights = deviceMgr->getDeviceByType(DeviceType::TYPE_Light);
+        if(i % 2 == 0){
+            std::cout << "[LIGHT] Blinking lights ON." << std::endl;
+        }
+        else {
+            std::cout << "[LIGHT] Blinking lights OFF." << std::endl;
+        }
         for (IDevice* light : lights) {
             if(i % 2 == 0){
                 light->poweron();
-                std::cout << "Lights ON" << std::endl;
             }
             else {
                 light->poweroff();
-                std::cout << "Lights OFF" << std::endl;
             }
         }
         
