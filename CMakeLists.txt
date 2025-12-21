@@ -6,7 +6,7 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 add_library(MSH_M6)
 
-target_link_libraries(MSH_M6 PUBLIC MSH_M5)
+target_link_libraries(MSH_M6 PUBLIC MSH_M2 MSH_M5)
 
 target_include_directories(MSH_M6
     PUBLIC
