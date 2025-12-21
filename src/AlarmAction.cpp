@@ -11,7 +11,7 @@ void AlarmAction::handle(SecurityManager* mgr) {
 
         mgr->checkAlarmDuration(5000);
 
-        Sleep(5000);
+        sleep_ms(5000);
 
         handleNext(mgr);
     }

@@ -32,7 +32,7 @@ void LightBlinkAction::handle(SecurityManager* mgr) {
         
         mgr->checkAlarmDuration(1000);
         
-        Sleep(1000);
+        sleep_ms(1000);
     }
     handleNext(mgr);
 }
