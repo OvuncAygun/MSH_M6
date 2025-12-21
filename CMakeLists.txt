@@ -1,9 +1,6 @@
 cmake_minimum_required(VERSION 3.10)
 project(MSH_M6 LANGUAGES CXX)
 
-set(CMAKE_CXX_STANDARD 98)
-set(CMAKE_CXX_STANDARD_REQUIRED ON)
-
 add_library(MSH_M6)
 
 target_link_libraries(MSH_M6 PUBLIC MSH_M2 MSH_M5)
