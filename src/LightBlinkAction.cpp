@@ -18,15 +18,16 @@ void LightBlinkAction::handle(SecurityManager* mgr) {
         for (IDevice* light : lights) {
             if(i % 2 == 0){
                 light->poweron();
+                std::cout << "Lights ON" << std::endl;
             }
             else {
                 light->poweroff();
+                std::cout << "Lights OFF" << std::endl;
             }
         }
         
         mgr->checkAlarmDuration(1000);
         
-        std::cout << "[LIGHT] Blink" << std::endl;
         Sleep(1000);
     }
     handleNext(mgr);
