@@ -1,5 +1,5 @@
 #ifdef _WIN32
     #include <windows.h>
-#elif __unix__
+#else
     #include <unistd.h>
 #endif
